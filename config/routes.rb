@@ -1,4 +1,12 @@
 HangmanGame::Application.routes.draw do
+  get "users/index"
+  post "users/sign_in"
+  get "users/sign_up"
+  post "users/create"
+  get "games/index"
+  get "games/play_game"
+  post "games/game_input"
+  get "games/result"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
