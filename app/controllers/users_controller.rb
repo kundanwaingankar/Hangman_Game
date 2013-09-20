@@ -1,17 +1,30 @@
 class UsersController < ApplicationController
-  def index
-
-  end
-
-  def sign_in
-
-  end
-
-  def sign_up
+  def new
 
   end
 
   def create
 
   end
+
+  def show
+
+  end
+
+  def edit
+
+  end
+
+  def update
+
+  end
+
+  def play_game
+
+  end
+
+  def user_input
+
+  end
+
 end

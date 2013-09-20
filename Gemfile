@@ -6,7 +6,7 @@ gem 'rails', '4.0.0'
 # Use mysql as the database for Active Record
 gem 'mysql'
 gem 'haml'
-gem 'twitter-bootstrap-rails'
+gem 'bootstrap-sass'
 gem "nested_form"
 
 # Use SCSS for stylesheets
