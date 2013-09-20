@@ -1,41 +1,65 @@
 require 'spec_helper'
 
 describe UsersController do
-  describe "GET index" do
-    it "has a 200 status code" do
-      get :index
-      (response.status).should == 200
+  describe "GET 'show'" do
+
+    it "should be successful"
+
+    it "should find the right user"
+
+    it "should have the user's name"
+
+    it "should have a profile"
+
+    it "should have the right URL"
+
+  end
+
+  describe "GET 'new'" do
+
+    it "should be successful"
+
+  end
+
+  describe "POST 'create'" do
+
+    describe "failure" do
+      it "should render the 'new' page"
+      it "should not create a user"
+    end
+
+    describe "success" do
+      it "should create a user"
+      it "should have a welcome message"
     end
   end
 
-  describe "POST sign_in" do
-    it "has a 302 status code" do
-      post :sign_in
-      (response.status).should == 302
+  describe "GET 'edit'" do
+    it "should be successful"
+  end
+
+  describe "PUT 'update'" do
+
+    describe "failure" do
+      it "should render the 'edit' page"
     end
 
-    it "should have username and password as params" do
-      post :sign_in
-      (response.status).should == 302
+    describe "success" do
+      it "should change the user's attributes"
+      it "should have a flash message"
     end
   end
 
-  describe "GET sign_up" do
-    it "has a 200 status code" do
-      get :sign_up
-      (response.status).should == 200
-    end
-  end
+  describe "authentication of edit/update actions" do
 
-  describe "POST create" do
-    it "has a 302 status code" do
-      post :create
-      (response.status).should == 302
+    describe "for non-signed-in users" do
+      it "should deny access to 'edit'"
+      it "should deny access to 'update'"
     end
 
-    it "should have all parameters(username,password,first_name,last_name,email,gender)" do
-      post :sign_in
-      (response.status).should == 302
+    describe "for signed-in users" do
+      it "should require matching users for 'edit'"
+      it "should require matching users for 'update'"
     end
   end
 end

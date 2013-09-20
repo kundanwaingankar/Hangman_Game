@@ -1,12 +1,19 @@
 HangmanGame::Application.routes.draw do
-  get "users/index"
-  post "users/sign_in"
-  get "users/sign_up"
-  post "users/create"
-  get "games/index"
-  get "games/play_game"
-  post "games/game_input"
-  get "games/result"
+resources :users  do
+  member do
+    get :play_game, :user_input
+  end
+end
+root :to => "pages#home"
+
+resources :sessions,      :only => [:new, :create, :destroy]
+
+match '/about',   :to => 'pages#about', via: 'get'
+match '/help',    :to => 'pages#help', via: 'get'
+match '/signup',  :to => 'users#new', via: 'get'
+match '/signin',  :to => 'sessions#new', via: 'get'
+match '/signout', :to => 'sessions#destroy', via: 'delete'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
