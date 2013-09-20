@@ -1,7 +1,8 @@
 HangmanGame::Application.routes.draw do
 resources :users  do
   member do
-    get :play_game, :user_input
+    get :play_game
+    post :user_input
   end
 end
 root :to => "pages#home"
