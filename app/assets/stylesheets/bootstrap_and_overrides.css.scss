@@ -1,1 +1,51 @@
 @import "bootstrap";
+header{
+  border-bottom: 2px solid gray;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+}
+.logo{
+  padding-top: 20px;
+  span{
+    font-size: 18px;
+    color:black;
+  }
+}
+.rightNav{
+  ul{
+    list-style: none;
+    li{
+      float:left;
+      margin-left: 10px;
+      a{
+        font-size: 12px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+.signupArea {
+  padding-top: 105px;
+  .signupBtn{
+    padding:20px 70px 20px 70px;
+    background: green;
+    color:#fff;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 20px;
+    text-decoration: none;
+    &:hover{
+      color:#ffffff !important;
+      text-decoration: none !important;
+    }
+  }
+}
+input[type="radio"], input[type="checkbox"]{
+  margin-top: 0px;
+}
+
+footer{
+  border-top: 2px solid gray;
+  padding-top: 10px;
+  margin-top: 20px;
+}
