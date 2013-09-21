@@ -5,6 +5,14 @@ class UsersController < ApplicationController
   end
 
   def create
+    @user = User.new(user_params)
+
+    if @user.save
+      @user.create_game
+      redirect_to root_path
+    else
+
+    end
 
   end
 
@@ -28,4 +36,8 @@ class UsersController < ApplicationController
 
   end
 
+  private
+  def user_params
+    params.require(:user).permit(:name, :password, profile_attributes: [:id, :first_name, :last_name, :email, :gender])
+  end
 end
