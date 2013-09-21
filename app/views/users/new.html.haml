@@ -1,0 +1,35 @@
+= nested_form_for (@user),html:{class:"form-horizontal"} do |f|
+  .control-group
+    =f.label :name, class:"control-label"
+    .controls
+      =f.text_field :name
+  .control-group
+    =f.label :password, class:"control-label"
+    .controls
+      =f.password_field :password
+  .profileInfo
+    =f.fields_for :profile do |prof|
+      .control-group
+        =prof.label :first_name, class:"control-label"
+        .controls
+          =prof.text_field :first_name
+      .control-group
+        =prof.label :last_name, class:"control-label"
+        .controls
+          =prof.text_field :last_name
+      .control-group
+        =prof.label :email, class:"control-label"
+        .controls
+          =prof.text_field :email
+      .control-group
+        =prof.label :gender ,class:"control-label"
+        .controls.clearfix
+          %label.span1
+            =prof.radio_button :gender ,true,checked: true
+            Male
+          %label.span2
+            =prof.radio_button :gender ,false
+            Female
+  .control-group
+    .controls
+      %input{type: "submit", value:"SignUp", class:"btn"}

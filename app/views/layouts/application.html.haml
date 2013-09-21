@@ -1,0 +1,17 @@
+!!!
+%html
+%head
+%title HangmanGame
+= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+= javascript_include_tag "application", "data-turbolinks-track" => true
+= csrf_meta_tags
+%body
+  %header
+    .container.clearfix
+      = render 'layouts/header'
+  %section
+    .container
+      =yield
+  %footer
+    .container
+      = render 'layouts/footer'
